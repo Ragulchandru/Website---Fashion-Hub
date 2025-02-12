@@ -1,0 +1,96 @@
+// Search Functionality
+function searchProducts() {
+    let input = document.getElementById('search-input').value.toLowerCase();
+    let products = document.querySelectorAll('.productbox');
+
+    products.forEach(product => {
+        let productText = product.querySelector('p').innerText.toLowerCase();
+        if (productText.includes(input)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+
+// Load More Products Functionality
+function loadMoreProducts(sectionId, loadMoreButtonId, viewLessButtonId) {
+    let products = document.querySelectorAll(`#${sectionId} .productbox`);
+    let visibleProducts = [...products].filter(product => product.style.display !== 'none').length;
+    let nextBatch = Math.min(visibleProducts + 6, products.length);
+
+    for (let i = visibleProducts; i < nextBatch; i++) {
+        if (products[i]) {
+            products[i].style.display = 'block';
+        }
+    }
+
+    if (nextBatch >= products.length) {
+        let loadMoreButton = document.getElementById(loadMoreButtonId);
+        if (loadMoreButton) {
+            loadMoreButton.style.display = 'none';
+        }
+    }
+
+    if (nextBatch > 6) {
+        let viewLessButton = document.getElementById(viewLessButtonId);
+        if (viewLessButton) {
+            viewLessButton.style.display = 'block';
+        }
+    }
+}
+
+// View Less Products Functionality
+function viewLessProducts(sectionId, loadMoreButtonId, viewLessButtonId) {
+    let products = document.querySelectorAll(`#${sectionId} .productbox`);
+
+    for (let i = 6; i < products.length; i++) {
+        products[i].style.display = 'none';
+    }
+
+    let loadMoreButton = document.getElementById(loadMoreButtonId);
+    if (loadMoreButton) {
+        loadMoreButton.style.display = 'block';
+    }
+
+    let viewLessButton = document.getElementById(viewLessButtonId);
+    if (viewLessButton) {
+        viewLessButton.style.display = 'none';
+    }
+}
+
+// Initialize page with limited products visible
+window.onload = function () {
+    let productSections = document.querySelectorAll('.product-section');
+    
+    productSections.forEach(section => {
+        let products = section.querySelectorAll('.productbox');
+        let sectionId = section.id;
+        let loadMoreButton = document.getElementById(`load-more-${sectionId}`);
+        let viewLessButton = document.getElementById(`view-less-${sectionId}`);
+        
+        // Hide products beyond the first 6
+        for (let i = 6; i < products.length; i++) {
+            products[i].style.display = 'none';
+        }
+        
+        // If there are more than 6 products, show "Load More" and hide "View Less"
+        if (products.length > 6) {
+            if (loadMoreButton) {
+                loadMoreButton.style.display = 'block'; // Ensure "Load More" is visible
+            }
+            if (viewLessButton) {
+                viewLessButton.style.display = 'none'; // Hide "View Less" initially
+            }
+        } else {
+            // If there are 6 or fewer products, hide both buttons
+            if (loadMoreButton) {
+                loadMoreButton.style.display = 'none';
+            }
+            if (viewLessButton) {
+                viewLessButton.style.display = 'none';
+            }
+        }
+    });
+};
+

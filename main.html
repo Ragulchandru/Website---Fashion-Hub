@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero-banner">
+        <h1>Welcome to Fashion Hub</h1>
+        <p>Your one-stop shop for the latest fashion trends and gadgets.</p>
+        <a href="#shop" class="cta-button">Shop Now</a>
+    </header>
+
+    <!-- Sticky Navigation Bar with Search Bar -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Search Bar Inside the Navigation -->
+            <form class="nav-search" onsubmit="event.preventDefault(); searchProducts();">
+                <input type="text" id="search-input" placeholder="Search here" onkeyup="searchProducts()">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Featured Products Section -->
+    <section id="shop" class="featured-section">
+        <h2>Featured Products</h2>
+        <div class="product-section">
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=laptops">
+                    <img src="mobile.webp" alt="Mobiles">
+                    <p><b>Mobiles</b></p>
+                    <span class="price">$299</span>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </a>
+            </div>
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=laptops">
+                    <img src="laptop.webp" alt="Laptops">
+                    <p><b>Laptops</b></p>
+                    <span class="price">$999</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=smart+watch">
+                    <img src="watch.jpg" alt="Watches">
+                    <p><b>Watches</b></p>
+                    <span class="price">$199</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=bluetooth+headphones&crid=2AG3M5CF9ZOSC&sprefix=blut+headphone%2Caps%2C332&ref=nb_sb_ss_ts-doa-p_1_14">
+                    <img src="headphone.jpg" alt="Headphones">
+                    <p><b>Headphones</b></p>
+                    <span class="price">$49</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=speakers+for+home&crid=1K7945TQ0N56C&sprefix=speaker%2Caps%2C326&ref=nb_sb_ss_ts-doa-p_5_7">
+                    <img src="speakers.webp" alt="Speakers">
+                    <p><b>Speakers</b></p>
+                    <span class="price">$49</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=tv+for+home&crid=2T7U2EJ6ZRJCL&sprefix=tv+for+home%2Caps%2C294&ref=nb_sb_noss_1">
+                    <img src="tv.webp" alt="TV">
+                    <p><b>TV</b></p>
+                    <span class="price">$299</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=powerbank+high+quality&crid=2FF5NPZBYZK2S&sprefix=powerbank%27+high+quality%2Caps%2C616&ref=nb_sb_noss_2">
+                    <img src="powerbank 2.jpg" alt="powerbank">
+                    <p><b>powerbank</b></p>
+                    <span class="price">$199</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=keyboard+high+quality&crid=HS6QEMR6JX5N&sprefix=keyboard+hi%2Caps%2C541&ref=nb_sb_ss_ts-doa-p_1_11">
+                    <img src="keyboard 2.jpg" alt="Keyboard">
+                    <p><b>Keyboard</b></p>
+                    <span class="price">$99</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=mouse&crid=AMCETJOG6XR8&sprefix=mouse%2Caps%2C241&ref=nb_sb_ss_pltr-sample-20_2_5">
+                    <img src="mouse.jpg" alt="Mouse">
+                    <p><b>Mouse</b></p>
+                    <span class="price">$99</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=gaming+cpu&page=2&crid=3UH82CM7XXX3&qid=1723696274&sprefix=gaming%2Caps%2C306&ref=sr_pg_2">
+                    <img src="cpu.jpg" alt="CPU">
+                    <p><b>CPU</b></p>
+                    <span class="price">$99</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=gaming+mouse+pad&i=computers&crid=13EJCDBRAG3F8&sprefix=gaming+mouse%2Ccomputers%2C339&ref=nb_sb_ss_pltr-sample-20_3_12">
+                    <img src="mouse pad.jpg" alt="MOuse pad">
+                    <p><b>Mouse Pad</b></p>
+                    <span class="price">$99</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+
+            <div class="productbox">
+                <a href="https://www.amazon.in/s?k=console">
+                    <img src="console.jpg" alt="Console">
+                    <p><b>Console</b></p>
+                    <span class="price">$399</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </a>
+            </div>
+            <!-- Add more product boxes as needed -->
+        </div>
+    </section>
+
+    <!-- Load More Button -->
+    <div class="load-more-container">
+        <button id="load-more" onclick="loadMoreProducts()">View More Products</button>
+        <button id="view-less" onclick="viewLessProducts()">View Less Products</button>
+    </div>
+    
+    
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"Fashion Hub has the best collection of gadgets I've ever seen. Their prices are unbeatable!" - John D.</p>
+        </div>
+        <div class="testimonial">
+            <p>"I love shopping at Fashion Hub. Fast delivery and top-quality products!" - Sarah K.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Contact</h3>
+            <p>Fashion Industry Pvt. Ltd., 183 Periyar Nagar, Erode, Tamil Nadu-638001</p>
+            <p>9345518760 | <a href="mailto:fashionhub11@gmail.com">fashionhub11@gmail.com</a></p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
